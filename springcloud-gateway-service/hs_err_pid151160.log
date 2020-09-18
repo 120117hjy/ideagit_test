@@ -1,0 +1,153 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_STACK_OVERFLOW (0xc00000fd) at pc=0x0000000069013ed7, pid=151160, tid=0x000000000001bdf0
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_144-b01) (build 1.8.0_144-b01)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.144-b01 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# V  [jvm.dll+0x213ed7]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000020433800):  JavaThread "NioBlockingSelector.BlockPoller-1" daemon [_thread_in_vm, id=114160, stack(0x0000000023b60000,0x0000000023c60000)]
+
+siginfo: ExceptionCode=0xc00000fd, ExceptionInformation=0x0000000000000001 0x0000000023c5b5a0 
+
+Registers:
+RAX=0x0000000023c5b5a0, RBX=0x0000000000000005, RCX=0x0000000000004000, RDX=0x0000000000000006
+RSP=0x0000000023c5f5a0, RBP=0x0000000000000000, RSI=0x0000000023c5f5a0, RDI=0x0000000000000005
+R8 =0x0000000000000006, R9 =0x000000001f93f740, R10=0x00000000239a51a0, R11=0x0000000023b6a188
+R12=0x000000001f93f740, R13=0x0000000020433800, R14=0x0000000023c5f668, R15=0x00000000239a51a0
+RIP=0x0000000069013ed7, EFLAGS=0x0000000000010206
+
+Top of Stack: (sp=0x0000000023c5f5a0)
+0x0000000023c5f5a0:   0000000000000002 0000000000000078
+0x0000000023c5f5b0:   0000000020433800 000000001f93f740
+0x0000000023c5f5c0:   00000000ffffffff 0000000069014e07
+0x0000000023c5f5d0:   0000000023c5f6d0 00000000239a51a0
+0x0000000023c5f5e0:   0000000020433800 0000000068ec0a63
+0x0000000023c5f5f0:   0000000023c5f630 0000000020433800
+0x0000000023c5f600:   0000000023c5f6c0 0000000020433800
+0x0000000023c5f610:   00000000239a51a0 0000000020433800
+0x0000000023c5f620:   0000000002f19a20 0000000020433800
+0x0000000023c5f630:   00000000239a51a0 0000000020433800
+0x0000000023c5f640:   000000001bb4df98 0000000020433800
+0x0000000023c5f650:   0000000000000001 00000000239a51a0
+0x0000000023c5f660:   0000000020433800 000000001ffd9980
+0x0000000023c5f670:   0000000020433800 0000000068ec210d
+0x0000000023c5f680:   0000000023c5f988 00000007c00069a0
+0x0000000023c5f690:   00000007c05d41b0 0000000068fc00f3 
+
+Instructions: (pc=0x0000000069013ed7)
+0x0000000069013eb7:   48 89 6c 24 30 33 ed 66 90 e8 8b 3b 08 00 ff c3
+0x0000000069013ec7:   48 63 c8 48 8b c6 48 0f af cf 48 ff c7 48 2b c1
+0x0000000069013ed7:   89 28 48 63 c3 48 3b 05 f5 37 59 00 7e db 48 8b
+0x0000000069013ee7:   6c 24 30 48 8b 5c 24 38 48 8b 74 24 40 48 83 c4 
+
+
+Register to memory mapping:
+
+RAX=0x0000000023c5b5a0 is pointing into the stack for thread: 0x0000000020433800
+RBX=0x0000000000000005 is an unknown value
+RCX=0x0000000000004000 is an unknown value
+RDX=0x0000000000000006 is an unknown value
+RSP=0x0000000023c5f5a0 is pointing into the stack for thread: 0x0000000020433800
+RBP=0x0000000000000000 is an unknown value
+RSI=0x0000000023c5f5a0 is pointing into the stack for thread: 0x0000000020433800
+RDI=0x0000000000000005 is an unknown value
+R8 =0x0000000000000006 is an unknown value
+R9 =0x000000001f93f740 is an unknown value
+R10={method} {0x00000000239a51a8} 'run' '()V' in 'org/apache/tomcat/util/net/NioBlockingSelector$BlockPoller'
+R11=0x0000000023b6a188 is pointing into the stack for thread: 0x0000000020433800
+R12=0x000000001f93f740 is an unknown value
+R13=0x0000000020433800 is a thread
+R14=0x0000000023c5f668 is pointing into the stack for thread: 0x0000000020433800
+R15={method} {0x00000000239a51a8} 'run' '()V' in 'org/apache/tomcat/util/net/NioBlockingSelector$BlockPoller'
+
+
+Stack: [0x0000000023b60000,0x0000000023c60000],  sp=0x0000000023c5f5a0,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000001fe5c000 JavaThread "http-nio-9001-exec-10" daemon [_thread_new, id=81080, stack(0x0000000000000000,0x0000000000000000)]
+  0x000000001fe57800 JavaThread "http-nio-9001-exec-9" daemon [_thread_new, id=157200, stack(0x0000000000000000,0x0000000000000000)]
+  0x000000001fe5b800 JavaThread "http-nio-9001-exec-8" daemon [_thread_new, id=153668, stack(0x0000000000000000,0x0000000000000000)]
+  0x000000001fe58800 JavaThread "http-nio-9001-exec-7" daemon [_thread_new, id=156720, stack(0x0000000000000000,0x0000000000000000)]
+  0x000000001fe56000 JavaThread "http-nio-9001-exec-6" daemon [_thread_new, id=48384, stack(0x0000000000000000,0x0000000000000000)]
+  0x000000001fe59000 JavaThread "http-nio-9001-exec-5" daemon [_thread_new, id=154684, stack(0x0000000000000000,0x0000000000000000)]
+  0x000000001fe5a800 JavaThread "http-nio-9001-exec-4" daemon [_thread_new, id=154812, stack(0x0000000000000000,0x0000000000000000)]
+  0x000000001fe5a000 JavaThread "http-nio-9001-exec-3" daemon [_thread_new, id=103004, stack(0x0000000000000000,0x0000000000000000)]
+  0x0000000020437000 JavaThread "http-nio-9001-exec-2" daemon [_thread_new, id=30016, stack(0x0000000000000000,0x0000000000000000)]
+  0x0000000020435000 JavaThread "http-nio-9001-exec-1" daemon [_thread_new, id=155760, stack(0x0000000000000000,0x0000000000000000)]
+=>0x0000000020433800 JavaThread "NioBlockingSelector.BlockPoller-1" daemon [_thread_in_vm, id=114160, stack(0x0000000023b60000,0x0000000023c60000)]
+  0x0000000020432800 JavaThread "DiscoveryClient-InstanceInfoReplicator-0" daemon [_thread_in_native, id=154652, stack(0x0000000023a60000,0x0000000023b60000)]
+  0x0000000020431000 JavaThread "DiscoveryClient-1" daemon [_thread_blocked, id=30492, stack(0x0000000023760000,0x0000000023860000)]
+  0x0000000020436800 JavaThread "DiscoveryClient-0" daemon [_thread_blocked, id=119300, stack(0x0000000023660000,0x0000000023760000)]
+  0x0000000020435800 JavaThread "AsyncResolver-bootstrap-0" daemon [_thread_blocked, id=28028, stack(0x0000000023360000,0x0000000023460000)]
+  0x0000000020434000 JavaThread "Eureka-JerseyClient-Conn-Cleaner2" daemon [_thread_blocked, id=121696, stack(0x0000000023260000,0x0000000023360000)]
+  0x0000000020430800 JavaThread "spring.cloud.inetutils" daemon [_thread_blocked, id=157592, stack(0x0000000022b60000,0x0000000022c60000)]
+  0x00000000202be800 JavaThread "container-0" [_thread_blocked, id=154640, stack(0x0000000021890000,0x0000000021990000)]
+  0x0000000020358000 JavaThread "ContainerBackgroundProcessor[StandardEngine[Tomcat]]" daemon [_thread_blocked, id=70552, stack(0x0000000021790000,0x0000000021890000)]
+  0x00000000202a4000 JavaThread "localhost-startStop-1" daemon [_thread_blocked, id=157660, stack(0x0000000021690000,0x0000000021790000)]
+  0x00000000202a3000 JavaThread "Tomcat-startStop-1" daemon [_thread_blocked, id=154984, stack(0x000000001f1c0000,0x000000001f2c0000)]
+  0x000000001f6b2000 JavaThread "RMI Scheduler(0)" daemon [_thread_blocked, id=157580, stack(0x0000000020990000,0x0000000020a90000)]
+  0x000000001f6a1000 JavaThread "RMI TCP Connection(1)-192.168.25.1" daemon [_thread_in_native, id=157256, stack(0x0000000020890000,0x0000000020990000)]
+  0x000000001e5a0800 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=49908, stack(0x000000001ed10000,0x000000001ee10000)]
+  0x000000001e2f8800 JavaThread "Service Thread" daemon [_thread_blocked, id=49580, stack(0x000000001ec10000,0x000000001ed10000)]
+  0x000000001e2f3000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=118444, stack(0x000000001eb10000,0x000000001ec10000)]
+  0x000000001e2ce000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=53100, stack(0x000000001ea10000,0x000000001eb10000)]
+  0x000000001e290800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=157608, stack(0x000000001e910000,0x000000001ea10000)]
+  0x000000001c502800 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=46472, stack(0x000000001e010000,0x000000001e110000)]
+  0x000000001c4ff800 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=120612, stack(0x000000001df10000,0x000000001e010000)]
+  0x000000001c4f1800 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=156088, stack(0x000000001de10000,0x000000001df10000)]
+  0x000000001c4d4000 JavaThread "Attach Listener" daemon [_thread_blocked, id=78056, stack(0x000000001dd10000,0x000000001de10000)]
+  0x000000001d853800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=26824, stack(0x000000001dc10000,0x000000001dd10000)]
+  0x000000001c4ae000 JavaThread "Finalizer" daemon [_thread_blocked, id=31456, stack(0x000000001d710000,0x000000001d810000)]
+  0x0000000002d99000 JavaThread "Reference Handler" daemon [_thread_blocked, id=155212, stack(0x000000001d610000,0x000000001d710000)]
+  0x0000000002ca9000 JavaThread "main" [_thread_blocked, id=77576, stack(0x0000000002ad0000,0x0000000002bd0000)]
+
+Other Threads:
+  0x000000001c487800 VMThread [stack: 0x000000001d510000,0x000000001d610000] [id=72108]
+  0x000000001e5b5800 WatcherThread [stack: 0x000000001ee10000,0x000000001ef10000] [id=83592]
+
+VM state:synchronizing (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000000002ca0250] Safepoint_lock - owner thread: 0x000000001c487800
+[0x0000000002ca0450] Threads_lock - owner thread: 0x000000001c487800
+
+Heap:
+ PSYoungGen      total 360448K, used 17941K [0x000000076b500000, 0x0000000786b00000, 0x00000007c0000000)
+  eden space 343040K, 5% used [0x000000076b500000,0x000000076c685620,0x0000000780400000)
+  from space 17408K, 0% used [0x0000000780400000,0x0000000780400000,0x0000000781500000)
+  to   space 15360K, 0% used [0x0000000781500000,0x0000000781500000,0x0000000782400000)
+ ParOldGen       total 97280K, used 31372K [0x00000006c1e00000, 0x00000006c7d00000, 0x000000076b500000)
+  object space 97280K, 32% used [0x00000006c1e00000,0x00000006c3ca3148,0x00000006c7d00000)
+ Metaspace       used 42258K, capacity 44060K, committed 44208K, reserved 1087488K
+  class space    used 5691K, capacity 6025K, committed 6064K, reserved 1048576K
+
+Card table byte_map: [0x00000000122c0000,0x0000000012ac0000] byte_map_base: 0x000000000ecb1000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006961d850
+ Begin Bits: [0x0000000013410000, 0x0000000017398000)
+ End Bits:   [0x0000000017398000, 0x000000001b320000)
+
+Polling page: 0x0000000000950000
+
+CodeCache: size=245760Kb used=9252Kb max_used=9253Kb free=236508Kb
+ bounds [0x0000000002f00000, 0x0000000003810000, 0x0000000011f00000]
+ total_blobs=4783 nmethods=4290 adapters=413
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 14.049 
